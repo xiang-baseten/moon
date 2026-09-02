@@ -1307,16 +1307,10 @@ impl<'query> ActionGraphBuilder<'query> {
 
     #[instrument(skip(self))]
     pub async fn setup_proto(&mut self) -> miette::Result<Option<NodeIndex>> {
-        let index = insert_node_if_missing!(
+        let index = insert_node_or_exit!(
             self,
             ActionNode::setup_proto(self.app_context.toolchains_config.proto.version.clone())
         );
-
-        // SetupProto mutates process-wide PROTO_* environment variables, so it
-        // must finish before workspace and project sync actions can run.
-        if let Some(sync_index) = self.get_index_from_node(&ActionNode::sync_workspace()) {
-            self.link_requirements(sync_index, vec![index])?;
-        }
 
         Ok(Some(index))
     }
@@ -1488,15 +1482,7 @@ impl<'query> ActionGraphBuilder<'query> {
             return Ok(None);
         }
 
-        let index = insert_node_if_missing!(self, ActionNode::sync_workspace());
-
-        // SetupProto may be inserted before or after SyncWorkspace depending on
-        // the command, so link the actions from both insertion paths.
-        if let Some(setup_index) = self.get_index_from_node(&ActionNode::setup_proto(
-            self.app_context.toolchains_config.proto.version.clone(),
-        )) {
-            self.link_requirements(index, vec![setup_index])?;
-        }
+        let index = insert_node_or_exit!(self, ActionNode::sync_workspace());
 
         Ok(Some(index))
     }

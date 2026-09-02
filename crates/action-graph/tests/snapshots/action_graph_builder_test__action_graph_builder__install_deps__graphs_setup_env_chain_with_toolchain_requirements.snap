@@ -8,7 +8,6 @@ digraph {
     2 [ label="SetupToolchain(tc-tier3:1.2.3)"]
     3 [ label="SetupEnvironment(tc-tier2-setup-env, bar)"]
     4 [ label="InstallDependencies(tc-tier2-setup-env, bar)"]
-    0 -> 1 [ label="required"]
     2 -> 0 [ label="required"]
     2 -> 1 [ label="required"]
     3 -> 2 [ label="required"]

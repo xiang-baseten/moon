@@ -8,7 +8,6 @@ digraph {
     2 [ label="SetupToolchain(tc-tier3:1.2.3)"]
     3 [ label="SetupToolchain(tc-tier3:4.5.6)"]
     4 [ label="SetupToolchain(tc-tier3)"]
-    0 -> 1 [ label="required"]
     2 -> 0 [ label="required"]
     2 -> 1 [ label="required"]
     3 -> 0 [ label="required"]

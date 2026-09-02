@@ -22,7 +22,6 @@ digraph {
     4 -> 0 [ label="required"]
     4 -> 5 [ label="required"]
     4 -> 1 [ label="required"]
-    0 -> 7 [ label="required"]
     8 -> 0 [ label="required"]
     8 -> 7 [ label="required"]
     9 -> 5 [ label="required"]
