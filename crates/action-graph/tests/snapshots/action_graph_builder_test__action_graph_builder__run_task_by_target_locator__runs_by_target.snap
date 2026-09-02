@@ -9,6 +9,7 @@ digraph {
     3 [ label="SetupToolchain(rust)"]
     4 [ label="RunTask(server:build)"]
     1 -> 0 [ label="required"]
+    0 -> 2 [ label="required"]
     3 -> 0 [ label="required"]
     3 -> 2 [ label="required"]
     4 -> 1 [ label="required"]

@@ -9,6 +9,7 @@ digraph {
     3 [ label="SetupToolchain(node:20.0.0)"]
     4 [ label="RunTask(bar:build)"]
     1 -> 0 [ label="required"]
+    0 -> 2 [ label="required"]
     3 -> 0 [ label="required"]
     3 -> 2 [ label="required"]
     4 -> 1 [ label="required"]

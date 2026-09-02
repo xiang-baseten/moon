@@ -12,6 +12,7 @@ digraph {
     5 [ label="RunTask(node:c)"]
     6 [ label="RunTask(node:d)"]
     1 -> 0 [ label="required"]
+    0 -> 2 [ label="required"]
     3 -> 0 [ label="required"]
     3 -> 2 [ label="required"]
     6 -> 1 [ label="required"]

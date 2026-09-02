@@ -152,8 +152,8 @@ mod action_graph_builder {
             assert_eq!(
                 topo(graph),
                 vec![
-                    ActionNode::sync_workspace(),
                     ActionNode::setup_proto(create_proto_version()),
+                    ActionNode::sync_workspace(),
                     ActionNode::setup_toolchain(SetupToolchainNode {
                         toolchain: spec.clone()
                     }),
@@ -198,8 +198,8 @@ mod action_graph_builder {
             assert_eq!(
                 topo(graph),
                 vec![
-                    ActionNode::sync_workspace(),
                     ActionNode::setup_proto(create_proto_version()),
+                    ActionNode::sync_workspace(),
                     ActionNode::setup_toolchain(SetupToolchainNode {
                         toolchain: spec1.clone()
                     }),
@@ -250,8 +250,8 @@ mod action_graph_builder {
             assert_eq!(
                 topo(graph),
                 vec![
-                    ActionNode::sync_workspace(),
                     ActionNode::setup_proto(create_proto_version()),
+                    ActionNode::sync_workspace(),
                     ActionNode::setup_toolchain(SetupToolchainNode {
                         toolchain: ToolchainSpec::new(
                             Id::raw("rust"),
@@ -337,8 +337,8 @@ mod action_graph_builder {
             assert_eq!(
                 topo(graph),
                 vec![
-                    ActionNode::sync_workspace(),
                     ActionNode::setup_proto(create_proto_version()),
+                    ActionNode::sync_workspace(),
                     ActionNode::setup_toolchain(SetupToolchainNode {
                         toolchain: ToolchainSpec::new(
                             Id::raw("tc-tier3"),
@@ -588,8 +588,8 @@ mod action_graph_builder {
             assert_eq!(
                 topo(graph),
                 vec![
-                    ActionNode::sync_workspace(),
                     ActionNode::setup_proto(create_proto_version()),
+                    ActionNode::sync_workspace(),
                     ActionNode::setup_toolchain(SetupToolchainNode { toolchain: spec }),
                 ]
             );
@@ -710,8 +710,8 @@ mod action_graph_builder {
             assert_eq!(
                 topo(graph),
                 vec![
-                    ActionNode::sync_workspace(),
                     ActionNode::setup_proto(create_proto_version()),
+                    ActionNode::sync_workspace(),
                     ActionNode::setup_toolchain(SetupToolchainNode {
                         toolchain: spec.clone()
                     }),
@@ -968,11 +968,11 @@ mod action_graph_builder {
             assert_eq!(
                 topo(graph),
                 vec![
+                    ActionNode::setup_proto(create_proto_version()),
                     ActionNode::sync_workspace(),
                     ActionNode::sync_project(SyncProjectNode {
                         project_id: Id::raw("bar"),
                     }),
-                    ActionNode::setup_proto(create_proto_version()),
                     ActionNode::setup_toolchain(SetupToolchainNode {
                         toolchain: create_node_spec(),
                     }),
@@ -1009,11 +1009,11 @@ mod action_graph_builder {
             assert_eq!(
                 topo(graph),
                 vec![
+                    ActionNode::setup_proto(create_proto_version()),
                     ActionNode::sync_workspace(),
                     ActionNode::sync_project(SyncProjectNode {
                         project_id: Id::raw("bar"),
                     }),
-                    ActionNode::setup_proto(create_proto_version()),
                     ActionNode::setup_toolchain(SetupToolchainNode {
                         toolchain: create_node_spec(),
                     }),
@@ -1160,11 +1160,11 @@ mod action_graph_builder {
             assert_eq!(
                 topo(graph),
                 vec![
+                    ActionNode::setup_proto(create_proto_version()),
                     ActionNode::sync_workspace(),
                     ActionNode::sync_project(SyncProjectNode {
                         project_id: Id::raw("bar"),
                     }),
-                    ActionNode::setup_proto(create_proto_version()),
                     ActionNode::setup_toolchain(SetupToolchainNode {
                         toolchain: create_node_spec(),
                     }),
@@ -1221,11 +1221,11 @@ mod action_graph_builder {
             assert_eq!(
                 topo(graph),
                 vec![
+                    ActionNode::setup_proto(create_proto_version()),
                     ActionNode::sync_workspace(),
                     ActionNode::sync_project(SyncProjectNode {
                         project_id: Id::raw("bar"),
                     }),
-                    ActionNode::setup_proto(create_proto_version()),
                     ActionNode::setup_toolchain(SetupToolchainNode {
                         toolchain: create_node_spec(),
                     }),
@@ -1276,11 +1276,11 @@ mod action_graph_builder {
             assert_eq!(
                 topo(graph),
                 vec![
+                    ActionNode::setup_proto(create_proto_version()),
                     ActionNode::sync_workspace(),
                     ActionNode::sync_project(SyncProjectNode {
                         project_id: Id::raw("bar"),
                     }),
-                    ActionNode::setup_proto(create_proto_version()),
                     ActionNode::setup_toolchain(SetupToolchainNode {
                         toolchain: create_node_spec(),
                     }),
@@ -1342,11 +1342,11 @@ mod action_graph_builder {
             assert_eq!(
                 topo(graph),
                 vec![
+                    ActionNode::setup_proto(create_proto_version()),
                     ActionNode::sync_workspace(),
                     ActionNode::sync_project(SyncProjectNode {
                         project_id: Id::raw("bar"),
                     }),
-                    ActionNode::setup_proto(create_proto_version()),
                     ActionNode::setup_toolchain(SetupToolchainNode {
                         toolchain: create_node_spec(),
                     }),
@@ -1403,11 +1403,11 @@ mod action_graph_builder {
             assert_eq!(
                 topo(graph),
                 vec![
+                    ActionNode::setup_proto(create_proto_version()),
                     ActionNode::sync_workspace(),
                     ActionNode::sync_project(SyncProjectNode {
                         project_id: Id::raw("bar"),
                     }),
-                    ActionNode::setup_proto(create_proto_version()),
                     ActionNode::setup_toolchain(SetupToolchainNode {
                         toolchain: create_node_spec(),
                     }),
@@ -1483,11 +1483,11 @@ mod action_graph_builder {
             assert_eq!(
                 topo(graph),
                 vec![
+                    ActionNode::setup_proto(create_proto_version()),
                     ActionNode::sync_workspace(),
                     ActionNode::sync_project(SyncProjectNode {
                         project_id: Id::raw("bar"),
                     }),
-                    ActionNode::setup_proto(create_proto_version()),
                     ActionNode::setup_toolchain(SetupToolchainNode {
                         toolchain: create_node_spec(),
                     }),
@@ -4271,8 +4271,8 @@ mod action_graph_builder {
             assert_eq!(
                 topo(graph),
                 vec![
-                    ActionNode::sync_workspace(),
                     ActionNode::setup_proto(create_proto_version()),
+                    ActionNode::sync_workspace(),
                     ActionNode::setup_toolchain(SetupToolchainNode {
                         toolchain: ToolchainSpec::new(
                             Id::raw("tc-tier3"),
@@ -4322,8 +4322,8 @@ mod action_graph_builder {
             assert_eq!(
                 topo(graph),
                 vec![
-                    ActionNode::sync_workspace(),
                     ActionNode::setup_proto(create_proto_version()),
+                    ActionNode::sync_workspace(),
                     ActionNode::setup_toolchain(SetupToolchainNode {
                         toolchain: ToolchainSpec::new(
                             Id::raw("tc-tier3"),
@@ -4435,8 +4435,8 @@ mod action_graph_builder {
             assert_eq!(
                 topo(graph),
                 vec![
-                    ActionNode::sync_workspace(),
                     ActionNode::setup_proto(create_proto_version()),
+                    ActionNode::sync_workspace(),
                     ActionNode::setup_toolchain(SetupToolchainNode {
                         toolchain: ToolchainSpec::new(
                             Id::raw("tc-tier3"),
@@ -4520,8 +4520,8 @@ mod action_graph_builder {
             assert_eq!(
                 topo(graph),
                 vec![
-                    ActionNode::sync_workspace(),
                     ActionNode::setup_proto(create_proto_version()),
+                    ActionNode::sync_workspace(),
                     ActionNode::setup_toolchain(SetupToolchainNode {
                         toolchain: ToolchainSpec::new(
                             Id::raw("tc-tier3"),
@@ -4689,8 +4689,8 @@ mod action_graph_builder {
             assert_eq!(
                 topo(graph),
                 vec![
-                    ActionNode::sync_workspace(),
                     ActionNode::setup_proto(create_proto_version()),
+                    ActionNode::sync_workspace(),
                     ActionNode::setup_toolchain(SetupToolchainNode { toolchain: node }),
                 ]
             );
@@ -4728,8 +4728,8 @@ mod action_graph_builder {
             assert_eq!(
                 topo(graph),
                 vec![
-                    ActionNode::sync_workspace(),
                     ActionNode::setup_proto(create_proto_version()),
+                    ActionNode::sync_workspace(),
                     ActionNode::setup_toolchain(SetupToolchainNode { toolchain: node1 }),
                     ActionNode::setup_toolchain(SetupToolchainNode { toolchain: node2 }),
                     ActionNode::setup_toolchain(SetupToolchainNode { toolchain: node3 }),
@@ -4755,8 +4755,8 @@ mod action_graph_builder {
             assert_eq!(
                 topo(graph),
                 vec![
-                    ActionNode::sync_workspace(),
                     ActionNode::setup_proto(create_proto_version()),
+                    ActionNode::sync_workspace(),
                     ActionNode::setup_toolchain(SetupToolchainNode { toolchain: node }),
                 ]
             );
@@ -4858,8 +4858,8 @@ mod action_graph_builder {
             assert_eq!(
                 topo(graph),
                 vec![
-                    ActionNode::sync_workspace(),
                     ActionNode::setup_proto(create_proto_version()),
+                    ActionNode::sync_workspace(),
                     ActionNode::setup_toolchain(SetupToolchainNode { toolchain: node }),
                 ]
             );
@@ -4886,8 +4886,8 @@ mod action_graph_builder {
             assert_eq!(
                 topo(graph),
                 vec![
-                    ActionNode::sync_workspace(),
                     ActionNode::setup_proto(create_proto_version()),
+                    ActionNode::sync_workspace(),
                     ActionNode::setup_toolchain(SetupToolchainNode {
                         toolchain: ToolchainSpec::new(
                             Id::raw("tc-tier3"),
@@ -4920,8 +4920,8 @@ mod action_graph_builder {
             assert_eq!(
                 topo(graph),
                 vec![
-                    ActionNode::sync_workspace(),
                     ActionNode::setup_proto(create_proto_version()),
+                    ActionNode::sync_workspace(),
                     ActionNode::setup_toolchain(SetupToolchainNode {
                         toolchain: ToolchainSpec::new(
                             Id::raw("tc-tier3"),
@@ -5226,6 +5226,29 @@ mod action_graph_builder {
 
     mod sync_workspace {
         use super::*;
+
+        #[tokio::test(flavor = "multi_thread")]
+        async fn runs_after_setup_proto() {
+            let sandbox = create_sandbox("projects");
+            let mut container = ActionGraphContainer::new(sandbox.path());
+
+            let mut builder = container
+                .create_builder(container.create_workspace_graph().await)
+                .await;
+
+            builder.sync_workspace().await.unwrap();
+            builder.setup_proto().await.unwrap();
+
+            let (_, graph) = builder.build();
+
+            assert_eq!(
+                topo(graph),
+                vec![
+                    ActionNode::setup_proto(create_proto_version()),
+                    ActionNode::sync_workspace(),
+                ]
+            );
+        }
 
         #[tokio::test(flavor = "multi_thread")]
         async fn graphs() {
